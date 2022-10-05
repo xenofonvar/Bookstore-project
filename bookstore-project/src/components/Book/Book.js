@@ -1,33 +1,33 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Book.css";
-import bookImage from "./../../assets/img/book-image.png";
-import { formatDate } from "../../pages/SearchPage/utils";
+import bookImage from "./../../assets/img/book-image.jpg";
+import { formatDate } from "../../utils";
+import { useNavigate } from "react-router-dom";
+import SelectedBookContext from "../../contexts/SelectedBookContext";
 
-const Book = ({
-  isbn,
-  title,
-  subtitle,
-  author,
-  published,
-  publisher,
-  pages,
-  description,
-  website,
-}) => {
+const Book = ({ book }) => {
+  const navigate = useNavigate();
+  const { setSelectedBook } = useContext(SelectedBookContext);
   return (
     <div
       className="book"
-      key={isbn}
-      onClick={() => (window.location.href = `/searchPage/${isbn}`)}
+      key={book.isbn}
+      onClick={() => {
+        setSelectedBook(book);
+        navigate(`/search/${book.isbn}`);
+      }}
     >
-      <img src={bookImage} alt="book_img" className="book_img" />
+      <img src={book.image} alt="book_img" className="book_img" />
       <div className="book_info">
-        <span className="book_info_title"> {title ? title : "title"}</span>
+        <span className="book_info_title">
+          {" "}
+          {book.title ? book.title : "title"}
+        </span>
         <span className="book_info_publisher">
-          {publisher ? publisher : "publisher"}
+          {book.publisher ? book.publisher : "publisher"}
         </span>
         <span className="book_info_date">
-          {published ? formatDate(published) : "published"}
+          {book.published ? formatDate(book.published) : "published"}
         </span>
       </div>
     </div>
