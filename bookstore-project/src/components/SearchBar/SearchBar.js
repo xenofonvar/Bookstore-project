@@ -1,43 +1,54 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./SearchBar.css";
-import { TextField, Box } from "@mui/material";
-import Button from "../Button/Button";
-import { useGlobalContext } from "../../contexts/BookContext";
+import { Box } from "@mui/material";
+import TextField from "@mui/material/TextField";
+import Autocomplete from "@mui/material/Autocomplete";
+import bookImage from "./../../assets/img/book-image.jpg";
+import AllBooksContext from "../../contexts/AllBooksContext";
+import SearchInputValueContext from "../../contexts/SearchInputValueContext";
 
-const SearchBar = (props) => {
-  const styles = {};
-  if (props.widthPercent) {
-    styles["--searchBar-width-percentage"] = props.widthPercent;
-  }
-
-  const { searchQuery, setSearchQuery } = useGlobalContext();
-  const handleSearch = (e) => {
-    console.log(e.target.value);
-    return setSearchQuery(e.target.value);
-  };
+const SearchBar = () => {
+  const { allBooks, setAllBooks } = useContext(AllBooksContext);
+  const { searchInputValue, setSearchInputValue } = useContext(
+    SearchInputValueContext
+  );
 
   return (
-    <div className="searchBarWrapper" style={styles}>
-      <Box sx={{ display: "flex", alignItems: "flex-end", paddingLeft: "2%" }}>
-        <TextField
-          value={searchQuery}
-          variant="standard"
-          placeholder={"Searching a book ..."}
-          fullWidth={true}
-          InputProps={{
-            disableUnderline: true,
-            fontSize: "11px",
-            height: "50px",
-            endAdornment: <Button btnName={"Search"} />,
-          }}
-          style={{
-            height: "50px",
-            justifyContent: "center",
-            paddingLeft: "10px",
-          }}
-          onChange={handleSearch}
-        />
-      </Box>
+    <div className="searchBarWrapper">
+      <Autocomplete
+        autoComplete
+        id="search"
+        freeSolo
+        sx={{
+          width: "100%",
+        }}
+        renderInput={(params) => (
+          <TextField
+            {...params}
+            sx={{
+              "& fieldset": { border: "none" },
+              input: { color: "#111" },
+            }}
+            placeholder={"Search a book ..."}
+          />
+        )}
+        options={allBooks.map((book) => book)}
+        renderOption={(props, option) => (
+          <Box
+            component="li"
+            sx={{ "& > img": { mr: 2, flexShrink: 0 } }}
+            {...props}
+          >
+            <img loading="lazy" width="40" src={option.image} alt="" />
+            {option.title}
+          </Box>
+        )}
+        inputValue={searchInputValue}
+        onInputChange={(_, newInputValue) => {
+          setSearchInputValue(newInputValue);
+        }}
+        getOptionLabel={(option) => option.title}
+      />
     </div>
   );
 };
