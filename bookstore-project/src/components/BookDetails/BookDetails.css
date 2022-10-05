@@ -1,0 +1,62 @@
+.image {
+  width: 100%;
+  max-width: 450px;
+  height: 100%;
+  max-height: 550px;
+  margin-top: 3%;
+}
+
+.author-section {
+  display: flex;
+  align-items: center;
+  margin-top: 5%;
+}
+
+.avatar {
+  margin-right: 5%;
+}
+
+.button-section {
+  display: flex;
+  justify-content: flex-start;
+  padding-bottom: 5%;
+}
+.button-section :last-child {
+  margin-left: 20px;
+}
+
+.book-description {
+  text-align: justify;
+  padding-bottom: 5%;
+}
+
+.book-details > h2,
+h1 {
+  padding-bottom: 5%;
+}
+
+.detail-pair {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.detail-pair > :last-child {
+  margin-left: 5px;
+}
+
+.book-publisher {
+  margin-bottom: 5%;
+}
+
+.category-section {
+  display: flex;
+  align-items: center;
+}
+.more-details-section {
+  margin-bottom: 5%;
+}
+
+.category-section > div {
+  margin-left: 2%;
+}
