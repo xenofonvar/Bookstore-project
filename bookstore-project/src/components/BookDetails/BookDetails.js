@@ -20,7 +20,7 @@ const BookDetails = ({
   rating,
 }) => {
   const category = ["No Category"];
-  console.log(rating);
+
   return (
     <>
       <Grid
