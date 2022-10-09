@@ -17,7 +17,11 @@ const Book = ({ book }) => {
         navigate(`/search/${book.isbn}`);
       }}
     >
-      <img src={book.image} alt="book_img" className="book_img" />
+      <img
+        src={book.image ? book.image : bookImage}
+        alt="book_img"
+        className="book_img"
+      />
       <div className="book_info">
         <span className="book_info_title">
           {" "}
