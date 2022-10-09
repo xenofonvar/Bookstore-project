@@ -1,19 +1,10 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
 import { CircularProgress } from "@mui/material";
-
-const useStyles = makeStyles({
-  root: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-});
+import "./Loader.css";
 
 const Loader = () => {
-  const classes = useStyles();
   return (
-    <div className={classes.root}>
+    <div className="loader">
       <CircularProgress />
     </div>
   );
