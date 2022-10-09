@@ -39,7 +39,12 @@ const SearchBar = () => {
             sx={{ "& > img": { mr: 2, flexShrink: 0 } }}
             {...props}
           >
-            <img loading="lazy" width="40" src={option.image} alt="" />
+            <img
+              loading="lazy"
+              width="40"
+              src={option.image ? option.image : bookImage}
+              alt=""
+            />
             {option.title}
           </Box>
         )}
@@ -47,7 +52,7 @@ const SearchBar = () => {
         onInputChange={(_, newInputValue) => {
           setSearchInputValue(newInputValue);
         }}
-        getOptionLabel={(option) => option.title}
+        getOptionLabel={(option) => option?.title}
       />
     </div>
   );
