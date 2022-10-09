@@ -127,7 +127,6 @@ const AddBookForm = ({ handlePostData }) => {
                 name={name}
               />
             ))}
-            <input type="file" accept="image/*" />
           </Grid>
         </Grid>
         <Box
