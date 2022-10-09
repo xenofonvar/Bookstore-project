@@ -16,11 +16,11 @@ const BookRecomendation = (props) => {
     },
     tablet: {
       breakpoint: { max: 1024, min: 464 },
-      items: 2,
+      items: 2.5,
     },
     mobile: {
       breakpoint: { max: 464, min: 0 },
-      items: 1,
+      items: 1.5,
     },
   };
   const { allBooks, setAllBooks } = useContext(AllBooksContext);
@@ -63,8 +63,8 @@ const BookRecomendation = (props) => {
     <>
       {!isLoading && (
         <Carousel responsive={responsive}>
-          {allBooks.map((book) => {
-            return <Book key={book.isbn} book={book} />;
+          {allBooks.map((book, index) => {
+            return <Book key={index} book={book} />;
           })}
         </Carousel>
       )}
