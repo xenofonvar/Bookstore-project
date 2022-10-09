@@ -13,6 +13,7 @@ const SearchPage = lazy(() => import("./pages/SearchPage/SearchPage"));
 const BookDetailsPage = lazy(() =>
   import("./pages/BookDetailsPage/BookDetailsPage")
 );
+const AddBookPage = lazy(() => import("./pages/AddBookPage/AddBookPage"));
 
 function App() {
   //All Books Provider
@@ -50,6 +51,7 @@ function App() {
                   <Route index path="/" element={<HomePage />} />
                   <Route path="/searchPage" element={<SearchPage />} />
                   <Route path="/search/:isbn" element={<BookDetailsPage />} />
+                  <Route path="/addBook" element={<AddBookPage />} />
                 </Routes>
               </Suspense>
             </SelectedBookContext.Provider>
