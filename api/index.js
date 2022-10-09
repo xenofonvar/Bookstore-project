@@ -26,27 +26,11 @@ app.get("/api/books/:isbn", (req, res) => {
   if (!book) return res.status(404).send("was not found");
 
   res.send(book);
-  console.log(req.params);
 });
 
-///TODO:
-// app.get("/api/books/?search=:key", (req, res) => {
-//   const result =
-// });
-
-const validationAction = (book) => {
-  const schema = Joi.object({
-    name: Joi.string().min(4).required(),
-  });
-  return schema.validate(book);
-};
-
 app.post("/api/books", (req, res) => {
-  //validation
-  const { error } = validationAction(req.body);
-  if (error) return res.status(400).send(error.details[0].message);
-
   //post new book
+  console.log(req.body.categories, req.body);
   const book = {
     isbn: req.body.isbn,
     title: req.body.title,
@@ -57,7 +41,11 @@ app.post("/api/books", (req, res) => {
     pages: req.body.pages,
     description: req.body.description,
     website: req.body.website,
+    categories: req.body.categories,
+    rating: req.body.rating,
+    image: req.body.image,
   };
+
   books.push(book);
   res.send(book);
 });
@@ -66,17 +54,12 @@ app.put("/api/books/:isbn", (req, res) => {
   const book = books.find((c) => c.isbn === req.params.isbn);
   if (!book) return res.status(404).send("was not found");
 
-  //validation
-  const { error } = validationAction(req.body);
-  if (error) return res.status(400).send(error.details[0].message);
-
   //update
   book.name = req.body.name;
   res.send(book);
 });
 
 app.delete("/api/books/:isbn", (req, res) => {
-  //   const book = books.find((c) => c.id === parseInt(req.params.id));
   const book = books.find((c) => c.isbn === parseInt(req.params.isbn));
   if (!book) return res.status(404).send("was not found");
 
