@@ -1,0 +1,13 @@
+.date-picker div {
+  height: 40px;
+  width: 210px;
+  margin-left: 10px;
+}
+
+.date-picker button {
+  margin-left: 60px;
+}
+
+.MuiInputBase-root {
+  padding-right: 10px;
+}
