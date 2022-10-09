@@ -1,0 +1,53 @@
+.footer-logo-section {
+  width: 20%;
+  padding-left: 3%;
+  font-size: 34px;
+  padding-top: 1%;
+}
+
+.logo {
+  text-decoration: none;
+  color: white;
+}
+
+.circle {
+  background-color: #00a8a7;
+  width: 44px;
+  height: 44px;
+  border-radius: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #272727;
+  margin-top: 20px;
+}
+.contact-section {
+  width: 250px;
+  margin-top: 2%;
+}
+.contact-section > * {
+  padding: 8px;
+  display: flex;
+  justify-content: center;
+}
+
+.social-section {
+  display: flex;
+  flex-direction: row;
+  width: 250px;
+  justify-content: space-between;
+}
+.social-title {
+  display: flex;
+  justify-content: center;
+}
+.terms-section {
+  display: "flex";
+  text-align: center;
+  flex-direction: row;
+}
+
+.copyright-section {
+  margin-left: 1%;
+  padding-bottom: 3px;
+}

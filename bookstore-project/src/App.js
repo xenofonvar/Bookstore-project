@@ -6,6 +6,7 @@ import Navbar from "./components/Navbar/Navbar";
 import AllBooksContext from "./contexts/AllBooksContext";
 import SelectedBookContext from "./contexts/SelectedBookContext";
 import SearchInputValueContext from "./contexts/SearchInputValueContext";
+import Footer from "./components/Footer/Footer";
 
 const HomePage = lazy(() => import("./pages/HomePage/HomePage"));
 const SearchPage = lazy(() => import("./pages/SearchPage/SearchPage"));
@@ -56,6 +57,7 @@ function App() {
             </SelectedBookContext.Provider>
           </SearchInputValueContext.Provider>
         </AllBooksContext.Provider>
+        <Footer />
       </Router>
     </>
   );
