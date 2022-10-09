@@ -3,7 +3,6 @@ import "./App.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Loader from "./components/Loader/Loader";
 import Navbar from "./components/Navbar/Navbar";
-// import { appConfig } from "./appConfig";
 import AllBooksContext from "./contexts/AllBooksContext";
 import SelectedBookContext from "./contexts/SelectedBookContext";
 import SearchInputValueContext from "./contexts/SearchInputValueContext";

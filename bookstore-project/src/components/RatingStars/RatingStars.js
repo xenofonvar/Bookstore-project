@@ -1,7 +1,6 @@
 import React from "react";
 import Rating from "@mui/material/Rating";
 import Box from "@mui/material/Box";
-import StarIcon from "@mui/icons-material/Star";
 import { Controller } from "react-hook-form";
 import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 import "./RatingStars.css";

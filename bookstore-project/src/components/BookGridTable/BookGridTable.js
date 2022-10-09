@@ -3,7 +3,6 @@ import React, { useContext, useState } from "react";
 import Book from "../Book/Book";
 import { Box } from "@mui/system";
 import SearchInputValueContext from "../../contexts/SearchInputValueContext";
-import SelectedBookContext from "../../contexts/SelectedBookContext";
 import usePagination from "./usePagination";
 
 const BookGridTable = ({ books }) => {
@@ -46,8 +45,6 @@ const BookGridTable = ({ books }) => {
               </Grid>
             );
           })}
-
-        {/* TODO: Refactor it so search of the selected book be in search page */}
 
         {books &&
           searchInputValue !== "" &&

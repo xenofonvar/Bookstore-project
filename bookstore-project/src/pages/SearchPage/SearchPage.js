@@ -40,7 +40,7 @@ const SearchPage = () => {
       <Breadcrumb paths={paths} />
       <Container sx={{ marginTop: "3%" }}>
         {!isLoading && <SearchBar />}
-        {/* TODO: use context */}
+
         {!isLoading && <BookGridTable books={allBooks} />}
       </Container>
     </>

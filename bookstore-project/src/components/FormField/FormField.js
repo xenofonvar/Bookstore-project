@@ -1,15 +1,7 @@
-import {
-  FormControl,
-  InputLabel,
-  MenuItem,
-  Rating,
-  Select,
-  TextField,
-  Typography,
-} from "@mui/material";
+import { TextField, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
-import { Controller, useForm } from "react-hook-form";
+import { Controller } from "react-hook-form";
 import CategorySelector from "../CategorySelector/CategorySelector";
 import DatePickerInput from "../DatePickerInput/DatePickerInput";
 import RatingStars from "../RatingStars/RatingStars";

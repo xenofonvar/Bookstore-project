@@ -1,5 +1,4 @@
 import React, { useState, useContext, useEffect } from "react";
-import "./BookRecomendation.css";
 import axios from "axios";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
@@ -24,7 +23,7 @@ const BookRecomendation = (props) => {
     },
   };
   const { allBooks, setAllBooks } = useContext(AllBooksContext);
-  const { selectedBook, setSelectedBook } = useContext(SelectedBookContext);
+  const { setSelectedBook } = useContext(SelectedBookContext);
   const { isbn } = useParams();
   ///State management
   const [isLoading, setIsLoading] = useState(true);
