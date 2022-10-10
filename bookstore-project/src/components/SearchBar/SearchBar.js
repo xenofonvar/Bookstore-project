@@ -25,6 +25,7 @@ const SearchBar = () => {
         renderInput={(params) => (
           <TextField
             {...params}
+            fullWidth
             sx={{
               "& fieldset": { border: "none" },
               input: { color: "#111" },
